@@ -11,14 +11,23 @@ export default function Login(){
 return <View style={estilos.container}>
     
 <Image source={ logo } style={estilos.logo}/>
+<View>
 
 <TextInput
         style={estilos.input}
-        onChangeText={setText}
-        placeholder="Digite algo"
+        placeholder="Email:"
+        placeholderTextColor="white"
       />
-      <Text style={estilos.texto}>{text}</Text>
 
+      <TextInput
+        style={estilos.input}
+        onChangeText={setText}
+        placeholder="Senha:"
+        placeholderTextColor="white"
+      />      
+    
+    <Text style={estilos.texto}>{text}</Text>
+    </View>
 </View>
 }
 
@@ -35,16 +44,24 @@ const estilos = StyleSheet.create({
         left: "8%"
     },
   
-    input : {
+    input: {
         width: '80%',
         height: 40,
-        borderColor: 'gray',
+        borderRadius: 20,
         borderWidth: 1,
         padding: 10,
-        color: 'white'
+        color: 'white',
+        left: "10%",
+        top: "15%",
+        backgroundColor: "#462783",
+        paddingStart: 10,
+        marginTop: 10
     },
+
     texto: {
-        color: "white"
+        color: "white",
+        left: "11%",
+        top: "17%"
     }
 
 
