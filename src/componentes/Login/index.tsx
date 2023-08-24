@@ -1,33 +1,29 @@
 import React, { useState } from 'react';
-import {Dimensions, Image, StyleSheet, View, TextInput, Text} from 'react-native'
+import {Dimensions, Image, StyleSheet, View, TextInput, Text, Pressable} from 'react-native'
 import logo from '../../../assets/logo.png'
 
 const width = Dimensions.get('screen').width;
-
-
 export default function Login(){
     const [text, setText] = useState('');
 
 return <View style={estilos.container}>
+    <Image source={ logo } style={estilos.logo}/>
     
-<Image source={ logo } style={estilos.logo}/>
-<View>
-
-<TextInput
-        style={estilos.input}
-        placeholder="Email:"
-        placeholderTextColor="white"
-      />
-
-      <TextInput
-        style={estilos.input}
-        onChangeText={setText}
-        placeholder="Senha:"
-        placeholderTextColor="white"
-      />      
-    
+    <View style={estilos.conteudo}>
+    <TextInput style={estilos.input} placeholder="Email:" placeholderTextColor="white"/>
+    <TextInput secureTextEntry={true} style={estilos.input} onChangeText={setText} placeholder="Senha:" placeholderTextColor="white"/>      
     <Text style={estilos.texto}>{text}</Text>
+        <Pressable
+        style={estilos.botao}
+        onPress={() => {
+          console.log("Botão pressionado!");
+        }}
+      >
+          <Text style={estilos.texto}>Entrar</Text>
+      </Pressable>
+        
     </View>
+
 </View>
 }
 
@@ -51,8 +47,6 @@ const estilos = StyleSheet.create({
         borderWidth: 1,
         padding: 10,
         color: 'white',
-        left: "10%",
-        top: "15%",
         backgroundColor: "#462783",
         paddingStart: 10,
         marginTop: 10
@@ -60,9 +54,21 @@ const estilos = StyleSheet.create({
 
     texto: {
         color: "white",
-        left: "11%",
-        top: "17%"
-    }
+        textAlign: "center"
+    },
 
+    botao: {
+        backgroundColor: "#462783",
+        borderRadius: 20,
+        padding: 10,
+        marginTop: 20,
+        width: "50%"
+    },
+    conteudo: {
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        flexDirection: "column"
+    }
 
     })
