@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
-import {Dimensions, Image, StyleSheet, View, TextInput, Text, Pressable} from 'react-native'
-import logo from '../../../assets/logo.png'
+import {Dimensions, Image, StyleSheet, View, TextInput, Text, Pressable} from 'react-native';
+import logo from '../../../assets/logo.png';
+import { NavigationProp, ParamListBase } from '@react-navigation/native';
 
 const width = Dimensions.get('screen').width;
-export default function Login(){
+
+export default function Login({ navigation }: { navigation: NavigationProp<ParamListBase> }){
+
     const [text, setText] = useState('');
 
 return <View style={estilos.container}>
@@ -13,15 +16,9 @@ return <View style={estilos.container}>
     <TextInput style={estilos.input} placeholder="Email:" placeholderTextColor="white"/>
     <TextInput secureTextEntry={true} style={estilos.input} onChangeText={setText} placeholder="Senha:" placeholderTextColor="white"/>      
     <Text style={estilos.texto}>{text}</Text>
-        <Pressable
-        style={estilos.botao}
-        onPress={() => {
-          console.log("Botão pressionado!");
-        }}
-      >
+        <Pressable style={estilos.botao} onPress={() => navigation.navigate('Home')}>
           <Text style={estilos.texto}>Entrar</Text>
       </Pressable>
-        
     </View>
 
 </View>
