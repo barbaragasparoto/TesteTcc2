@@ -1,17 +1,16 @@
 import React, { useState } from 'react';
-import {Dimensions, Image, StyleSheet, View, TextInput, Text, Pressable} from 'react-native';
-import logo from '../../../assets/logo.png';
+import {Dimensions, StyleSheet, View, TextInput, Text, Pressable} from 'react-native';
 import { NavigationProp, ParamListBase } from '@react-navigation/native';
+import Logo from '../Logo';
 
-const width = Dimensions.get('screen').width;
 
 export default function Login({ navigation }: { navigation: NavigationProp<ParamListBase> }){
 
     const [text, setText] = useState('');
 
 return <View style={estilos.container}>
-    <Image source={ logo } style={estilos.logo}/>
     
+    <Logo/>
     <View style={estilos.conteudo}>
     <TextInput style={estilos.input} placeholder="Email:" placeholderTextColor="white"/>
     <TextInput secureTextEntry={true} style={estilos.input} onChangeText={setText} placeholder="Senha:" placeholderTextColor="white"/>      
@@ -26,16 +25,11 @@ return <View style={estilos.container}>
 
 const estilos = StyleSheet.create({
 
+
     container: {
         backgroundColor: 'black',
         height: '100%'
 },
-
-    logo: {
-        width: "90%",
-        height: 420 / 594 * width,
-        left: "8%"
-    },
   
     input: {
         width: '80%',
