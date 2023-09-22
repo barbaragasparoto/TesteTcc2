@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {Dimensions, StyleSheet, View, TextInput, Text, Pressable} from 'react-native';
+import { StyleSheet, View, TextInput, Text, Pressable} from 'react-native';
 import { NavigationProp, ParamListBase } from '@react-navigation/native';
 import Logo from '../Logo';
 
