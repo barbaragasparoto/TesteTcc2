@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { StyleSheet, View, TextInput, Text, Pressable } from "react-native";
 import { NavigationProp, ParamListBase } from "@react-navigation/native";
 import Logo from "../componentes/Logo";
+import { useRouter } from "expo-router";
 
 export default function Login({
   navigation,
@@ -9,7 +10,7 @@ export default function Login({
   navigation: NavigationProp<ParamListBase>;
 }) {
   const [text, setText] = useState("");
-
+  const router = useRouter();
   return (
     <View style={estilos.container}>
       <Logo />
@@ -29,7 +30,7 @@ export default function Login({
         <Text style={estilos.texto}>{text}</Text>
         <Pressable
           style={estilos.botao}
-          onPress={() => navigation.navigate("(tabs)")}
+          onPress={() => router.replace("(tabs)")}
         >
           <Text style={estilos.texto}>Entrar</Text>
         </Pressable>
