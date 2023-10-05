@@ -1,6 +1,7 @@
 {
   "expo": {
     "name": "TesteTcc2",
+    "scheme": "TesteTcc2",
     "slug": "TesteTcc2",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -24,10 +25,11 @@
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
-    }
-    
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router"
+    ]
   }
-
 }
-
