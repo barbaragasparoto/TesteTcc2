@@ -4,7 +4,7 @@ import { NavigationProp, ParamListBase } from "@react-navigation/native";
 import Logo from "../componentes/Logo";
 import { useRouter } from "expo-router";
 
-export default function Login({
+export default function Solicitacao({
   navigation,
 }: {
   navigation: NavigationProp<ParamListBase>;
@@ -13,39 +13,26 @@ export default function Login({
   const router = useRouter();
   return (
     <View style={estilos.container}>
-      
       <Logo />
-
       <View style={estilos.conteudo}>
-        
         <TextInput
           style={estilos.input}
           placeholder="Email:"
           placeholderTextColor="white"
         />
-
         <TextInput
           secureTextEntry={true}
           style={estilos.input}
           placeholder="Senha:"
           placeholderTextColor="white"
         />
-
         <Text style={estilos.texto}>{text}</Text>
         <Pressable
           style={estilos.botao}
-          onPress={() => router.replace("(tabs)")}
+          onPress={() => router.replace("Login")}
         >
-          <Text style={estilos.texto}>Entrar</Text>
+          <Text style={estilos.texto}>Solicitar</Text>
         </Pressable>
-
-        <Pressable
-          
-          onPress={() => router.replace("Solicitacao")}
-        >
-          <Text style={estilos.texto}>Solicite seu acesso clicando aqui</Text>
-        </Pressable>
-
       </View>
     </View>
   );
@@ -53,7 +40,7 @@ export default function Login({
 
 const estilos = StyleSheet.create({
   container: {
-    backgroundColor: "black",
+    backgroundColor: "white",
     height: "100%",
   },
 
