@@ -6,6 +6,7 @@ import MyDatePicker from "../componentes/Data/index";
 import { useState } from 'react';
 import Inputlab from "../componentes/Inputlab";
 import Inputhora from "../componentes/Inputhora";
+import { MantineProvider } from '@mantine/core';
 
 export default function Home() {
   const router = useRouter();
@@ -18,12 +19,14 @@ export default function Home() {
           <Card title="" content="" />
         </View>
 
-        
+
       <View style={estilos.cardinput}>
         <Text style={estilos.textoinput}>Agende seu horarivvvo</Text>
         <MyDatePicker/>
         <Inputlab/>
+        <MantineProvider>
         <Inputhora/>
+    </MantineProvider>
 
       </View>
 
