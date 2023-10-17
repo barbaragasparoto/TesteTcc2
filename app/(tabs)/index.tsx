@@ -5,6 +5,7 @@ import Card from "../componentes/Card/Card";
 import MyDatePicker from "../componentes/Data/index";
 import { useState } from 'react';
 import Inputlab from "../componentes/Inputlab";
+import Inputhora from "../componentes/Inputhora";
 
 export default function Home() {
   const router = useRouter();
@@ -22,13 +23,9 @@ export default function Home() {
         <Text style={estilos.textoinput}>Agende seu horario</Text>
         
         <MyDatePicker/>
+        <Inputhora/>
         <Inputlab/>
-        <TextInput
-          style={estilos.input}
-          placeholder="Email:"
-          placeholderTextColor="black"
-        />
-
+       
       </View>
 
     </View>
@@ -43,8 +40,6 @@ const estilos = StyleSheet.create({
     left: 0,
     right: 0,
   },
-
-
 
   cardinput: {
     backgroundColor: "#462783",
