@@ -1,39 +1,22 @@
-import React, { useState } from 'react';
-import { View, Button, Text } from 'react-native';
-import DateTimePickerModal from 'react-native-modal-datetime-picker';
+import React, { useRef } from 'react';
+import { ActionIcon, rem } from '@mantine/core';
+import { TimeInput } from '@mantine/dates';
+import { IconClock } from '@tabler/icons-react';
 
-const Inputhora = () => {
-  const [isTimePickerVisible, setTimePickerVisibility] = useState(false);
-  const [selectedTime, setSelectedTime] = useState(null);
+interface CustomTimeInput extends HTMLInputElement {
+  showPicker: () => void;
+}
 
-  const showTimePicker = () => {
-    setTimePickerVisibility(true);
-  };
+export default function InputHora() {
+  const ref = useRef<CustomTimeInput>(null);
 
-  const hideTimePicker = () => {
-    setTimePickerVisibility(false);
-  };
-
-  const handleTimeConfirm = (time) => {
-    // Formate a hora selecionada (opcional)
-    const formattedTime = time.toLocaleTimeString();
-
-    setSelectedTime(formattedTime);
-    hideTimePicker();
-  };
+  const pickerControl = (
+    <ActionIcon variant="subtle" color="gray" onClick={() => ref.current?.showPicker()}>
+      <IconClock style={{ width: rem(16), height: rem(16) }} stroke={1.5} />
+    </ActionIcon>
+  );
 
   return (
-    <View>
-      <Button title="Selecionar Hora" onPress={showTimePicker} />
-      <Text>Hora Selecionada: {selectedTime}</Text>
-      <DateTimePickerModal
-        isVisible={isTimePickerVisible}
-        mode="time"
-        onConfirm={handleTimeConfirm}
-        onCancel={hideTimePicker}
-      />
-    </View>
+    <TimeInput label="Click icon to show browser picker" ref={ref} rightSection={pickerControl} />
   );
-};
-
-export default Inputhora;
+}

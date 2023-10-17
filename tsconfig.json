@@ -5,8 +5,8 @@
     "jsx": "react-native",
     "moduleResolution": "node",
     "esModuleInterop": true,
-    "target": "ESNext",
-    "lib": ["ESNext"]
+    "target": "es6",
+    "lib": ["dom"]
   },
   "exclude": ["node_modules"]
 }

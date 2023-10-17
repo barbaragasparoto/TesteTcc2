@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-
+    marginTop: 17
   },
 
   text: {
@@ -48,14 +48,17 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     textAlign: "right",
     flex: 1,
-    color: "#ffffff"
+    color: "#ffffff",
+    marginTop: 40
   },
   permissao: {
     fontSize: 15,
     fontFamily: "Arial",
     color: "#FFCC00",
     textAlign: "right",
-    marginEnd: 77,
+    marginEnd: 60,
+    marginBottom: 40
+
   },
 });
 

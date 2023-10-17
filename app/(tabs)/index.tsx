@@ -20,12 +20,11 @@ export default function Home() {
 
         
       <View style={estilos.cardinput}>
-        <Text style={estilos.textoinput}>Agende seu horario</Text>
-        
+        <Text style={estilos.textoinput}>Agende seu horarivvvo</Text>
         <MyDatePicker/>
-        <Inputhora/>
         <Inputlab/>
-       
+        <Inputhora/>
+
       </View>
 
     </View>
@@ -51,7 +50,7 @@ const estilos = StyleSheet.create({
     shadowOpacity: 0.3,
     shadowRadius: 4,
     elevation: 5,
-    marginTop: 190,
+    marginTop: 200,
     
   },
 
